@@ -1,0 +1,7 @@
+Instrucciones:
+
+Editar el archivo Change-Office2016x64  cambiar  la linea "/inpkey:XXXX-XXXX-XXXX-XXXX-XXXX" reemplazando las XXXX por tu numero de serie
+Ejemplo: 
+/inpkey:1111-2222-3333-4444-5555
+
+*******El script esta diseñado para funcionar con windows 7 o posterior  de 64 bits  con office 2016 de 64 bits ********
