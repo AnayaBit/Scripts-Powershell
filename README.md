@@ -1,2 +1,2 @@
 # Scripts-Powershell
-Scripts  de PowerShell
+Coleccion de Scripts  de PowerShell para diversas tareas de administracion de servidores
