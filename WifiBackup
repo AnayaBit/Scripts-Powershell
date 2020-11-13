@@ -1,0 +1,14 @@
+<# 
+.SYNOPSIS 
+Script para respaldar redes wlan  y restaurarlas  1.0  probado en windows 10 PRO (2004) Requiere usuario con permiso de administrador
+David Olvera
+.DESCRIPTION
+Este script ayuda a respaldar todas las redes wifi que tenga agregadas el equipo en la ruta C:\wifibackup y crea un script llamado restore.ps1, una vez realizado el respaldo copia la carpeta wifibackup en el equipo donde desees restaurar las redes  y ejecuta el escript restore.ps1
+.NOTES
+Requiere  un usuario con persmisos de administrador
+#>
+New-Item -Path "c:\" -Name "wifibackup" -ItemType "directory"
+netsh wlan export profile folder=C:\wifibackup
+Get-ChildItem *.xml | Out-GridView
+PAUSE 
+New-Item -Path "c:\wifibackup\" -Name "restore.ps1" -ItemType "file" -Value 'cd C:\wifibackup\;Get-ChildItem  *.xml | ForEach-Object -Process  {netsh wlan add profile filename=$_}'
